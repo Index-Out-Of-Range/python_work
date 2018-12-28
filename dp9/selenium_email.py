@@ -1,7 +1,7 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 import re
+from send_email import send_emails
 
 
 def jump_page_to_get_email(driver, page_url, teacher_dict):
@@ -30,4 +30,6 @@ if __name__ == "__main__":
 	driver = webdriver.Chrome()
 	first_page_url = "http://cs.nankai.edu.cn/index.php/zh/2017-01-15-22-19-36/2017-01-15-22-20-52?limitstart=0"
 	jump_page_to_get_email(driver, first_page_url, teacher_dict)
-	print(teacher_dict)
+	from_addr = "2332939290@qq.com"
+	for key, value in teacher_dict.items():
+		send_emails(from_addr, key, value)

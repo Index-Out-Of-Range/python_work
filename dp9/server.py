@@ -11,7 +11,10 @@ def tcp_link(sock, addr):
     print('Accept new connection from %s:%s...' % addr)
     while True:
         try:
-            print(sock.recv(1024).decode())
+            recv_msg = sock.recv(1024).decode()
+            print(recv_msg)
+            # if sock.recv(1024).decode() == "exit":
+            #     break
         finally:
             print("Server: " + str(ctime(time())) + " ", end="")
             message = "Server: " + str(ctime(time())) + " "+ input()

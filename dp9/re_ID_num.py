@@ -29,4 +29,6 @@ def is_ID_num(number, check_code_list, id_code_list):
 if __name__ == '__main__':
     id_code_list = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2]
     check_code_list = [1, 0, 'X', 9, 8, 7, 6, 5, 4, 3, 2]
-    print(is_ID_num("430721199911112515", check_code_list, id_code_list))
+    your_ID_num = input("please input your ID num:")
+    # print(is_ID_num("430721199911112515", check_code_list, id_code_list))
+    print(is_ID_num(your_ID_num, check_code_list, id_code_list))
