@@ -40,7 +40,6 @@ if __name__ == '__main__':
         get_email(url, headers, email_dict)
     for item in email_dict.items():
         print(item)
-    receiver_dict = {"丁鹏谷歌": "dp1612841@gmail.com", "丁鹏QQ": "1913765060@qq.com"}
     from_addr = "2332939290@qq.com"
-    for key, value in receiver_dict.items():
+    for key, value in email_dict.items():
         send_emails(from_addr, key, value)
