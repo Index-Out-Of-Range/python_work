@@ -18,7 +18,7 @@ def send_emails(from_addr, name, to_addr):
 
     msg = MIMEMultipart("alternative")
     msg.attach(MIMEText('hello', 'plain', 'utf-8'))
-    with open('D:\pycharm\python_work\dp9\Christmas1.jpg', 'rb') as f:
+    with open('Christmas1.jpg', 'rb') as f:
         # 设置附件的MIME和文件名，这里是png类型:
         mime = MIMEBase('image', 'jpg', filename='Christmas1.jpg')
         # 加上必要的头信息:
@@ -33,7 +33,7 @@ def send_emails(from_addr, name, to_addr):
         # 添加到MIMEMultipart:
         msg.attach(mime)
 
-    with open("D:\pycharm\python_work\dp9\Christmas.html", "r", encoding="utf-8") as f:
+    with open("Christmas.html", "r", encoding="utf-8") as f:
         content = f.read()
     msg.attach(MIMEText(content, 'html', 'utf-8'))
     msg['From'] = _format_addr('一位不愿透露姓名的靓仔 <%s>' % from_addr)
